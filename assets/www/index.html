@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		 
+		 <meta name="language" content="es" />
+         <meta name="keywords" content="Erotic, Sex , Dice" />
+         <meta name="description" content="Sex Dice " />
+        
+         
+
+         <title>KAMASU-DICE</title>
+				 
+         <!--- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" /> --->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="bartender.css" /> 
+	
+</head>
+<body onload=" init();init2();">
+<div data-role="page" id="pinicio">
+
+	<div data-role="header" data-position="fixed" data-theme="a">                 
+		<h1 class=""><img style="max-width: 100%;max-height: 200%" src="images/title.png"/></h1>                 
+	</div>
+
+	<div data-role="content" class="content">
+	
+	
+		<div id="ini_img" style="text-align:center"> 
+			<img style="max-width: 100%;max-height: 200%"src="images/inicio.png"/>
+		</div>			
+	</div>
+
+	<div data-role="footer" data-id="mainFooter" data-position="fixed">
+		<div data-role="navbar" data-grid="d">
+			<ul class="apple-navbar-ui comboSprite">
+				<li><a href="#cartas" data-iconpos="top" data-icon="cartas">Cartas</a></li>
+				
+				<li><a href="#posiciones" data-iconpos="top" data-icon="posiciones">Posiciones</a></li>
+			
+				<li><a href="#acciones"  data-iconpos="top" data-icon="acciones">Acciones</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<div data-role="page" id="cartas">
+
+	<div data-role="header" data-position="fixed" data-theme="a"> 
+		<a href="#pinicio" data-role="button" data-inline="true">Menu</a>
+		<h1 class=""><img style="max-width: 90%;"  src="images/title.png"></h1>                
+	</div>
+
+	<div data-role="content" class="content">
+	<div id="info" class="pagecontent" style="text-align:center">
+	<div id="container3"></div>
+		
+
+	</div>
+
+	</div>
+	<div style="background-color: #ffffff;z-index:1; width:100%">
+	
+		<div style="text-align: center">
+			<a type="button" data-inline="true" onclick="audio2.play();flipdisc.previous();"><<</a>
+			<a type="button" data-inline="true"  onclick="audio2.play();flipdisc.next();">>></a>
+			
+		</div>
+	</div>
+	<div data-role="footer" data-id="mainFooter" data-position="fixed">
+		<div data-role="navbar" data-grid="d">
+			<ul class="apple-navbar-ui comboSprite">
+				<li><a href="#cartas" class="ui-btn-active ui-state-persist" data-iconpos="top" data-icon="cartas">Cartas</a></li>
+				
+				<li><a href="#posiciones" data-iconpos="top" data-icon="posiciones">Posiciones</a></li>
+			
+				<li><a href="#acciones"  data-iconpos="top" data-icon="acciones">Acciones</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+
+<div data-role="page" id="posiciones">
+
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<a href="#pinicio" data-role="button" data-inline="true">Menu</a>
+		<h1 class=""><img style="max-width: 90%;"  src="images/title.png"></h1>                  
+	</div>
+
+	<div data-role="content" class="content">
+		
+	
+	<div id="dados" class="pagecontent">
+		
+	<div id="container"></div>
+		<div id="faces" class="faces">
+			<div id="face1" class="face"><img src="images/1.png"></div>
+			<div id="face2" class="face"><img src="images/2.png"></div>
+			<div id="face3" class="face"><img src="images/3.png"></div>
+			<div id="face4" class="face"><img src="images/4.png"></div>
+			<div id="face5" class="face"><img src="images/5.png"></div>
+			<div id="face6" class="face"><img src="images/6.png"></div>
+			<div id="face7" class="face"><img src="images/1.png"></div>
+		</div>
+		<input type="button" class="w_button w_radius w_bg_dark" value="LANZAR DADO" onclick="start();" />
+	</div>
+		
+	</div>
+	
+	<div data-role="footer" data-id="mainFooter" data-position="fixed">
+		<div data-role="navbar" data-grid="d">
+			<ul class="apple-navbar-ui comboSprite">
+				<li><a href="#cartas" data-iconpos="top" data-icon="cartas">Cartas</a></li>
+				<li><a href="#posiciones" class="ui-btn-active ui-state-persist" data-iconpos="top" data-icon="posiciones">Posiciones</a></li>
+				
+				<li><a href="#acciones" data-iconpos="top" data-icon="acciones">Acciones</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+<div data-role="page" id="acciones">
+
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<a href="#pinicio" data-role="button" data-inline="true">Menu</a>
+	<h1 class=""><img style="max-width: 90%;"  src="images/title.png"></h1>                  
+	</div>
+
+	<div data-role="content" class="content">
+		
+	<div id="dados2" class="pagecontent"  >
+	<div id="container2">
+		<div id="containerCube1"></div>
+		<div id="containerCube2"></div>
+	</div>		
+		
+		<div id="faces" class="faces">
+			<div id="cube1_face1" class="faces2"><img src="images/11.png"></div>
+			<div id="cube1_face2" class="faces2"><img src="images/12.png"></div>
+			<div id="cube1_face3" class="faces2"><img src="images/13.png"></div>
+			<div id="cube1_face4" class="faces2"><img src="images/14.png"></div>
+			<div id="cube1_face5" class="faces2"><img src="images/15.png"></div>
+			<div id="cube1_face6" class="faces2"><img src="images/16.png"></div>
+			
+			<div id="cube2_face1" class="faces2"><img src="images/21.png"></div>
+			<div id="cube2_face2" class="faces2"><img src="images/22.png"></div>
+			<div id="cube2_face3" class="faces2"><img src="images/23.png"></div>
+			<div id="cube2_face4" class="faces2"><img src="images/24.png"></div>
+			<div id="cube2_face5" class="faces2"><img src="images/25.png"></div>
+			<div id="cube2_face6" class="faces2"><img src="images/26.png"></div>
+		
+		</div>
+		<input type="button" class="w_button w_radius w_bg_dark" value="LANZAR DADOS" onclick="start11();" />
+	</div>
+		
+		
+	</div>
+	
+	<div data-role="footer" data-id="mainFooter" data-position="fixed">
+		<div data-role="navbar" data-grid="d">
+			<ul class="apple-navbar-ui comboSprite">
+				<li><a href="#cartas" data-iconpos="top" data-icon="cartas">Cartas</a></li>
+				<li><a href="#posiciones" data-iconpos="top" data-icon="posiciones">Posiciones</a></li>
+			
+				<li><a href="#acciones" class="ui-btn-active ui-state-persist" data-iconpos="top" data-icon="acciones">Acciones</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+
+
+</body>
+		 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		 <script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
+		 <!-- THEME UTILITY -->
+		<script type="text/javascript" src="themes/utils/loader.js"></script>
+		<!-- END THEME UTILITY -->
+		
+		<!-- CORE -->
+		<!-- Can be replaced by wink.min.js -->
+		<script type="text/javascript" src="wink-1.4.3.min.js"></script>
+		
+		<!-- END CORE -->
+		
+		<script type="text/javascript" src="math/geometric/js/geometric.js"></script>
+		<script type="text/javascript" src="math/matrix/js/matrix.js"></script>
+		<script type="text/javascript" src="fx/xyz/js/3dfx.js"></script>
+		<script type="text/javascript" src="ux/movementtracker/js/movementtracker.js"></script>
+		<script type="text/javascript" src="ux/gesture/js/gesture.js"></script>
+		<script type="text/javascript" src="fx/animation/js/animation.js"></script>
+
+		<script type="text/javascript" src="ui/xyz/cube/js/cube.js"></script>
+		<script type="text/javascript" src="ui/xyz/flipdisc/js/flipdisc.js"></script>
+
+
+		<script type="text/javascript">
+			var cube;
+			var i=0;
+			var h=0;
+			var j=0;
+			var timer;
+			ini =0;
+			var audio = new Audio('http://online2.conexia.es/android/DCM_kamasudice/mp3/dados.mp3');
+			var audio2 = new Audio('http://online2.conexia.es/android/DCM_kamasudice/mp3/hojas.mp3');
+			var handleRotation = function(rotation) {
+				//console.log("Rotation: " + rotation.x + ", " + rotation.y);
+			};
+			var handleRotationEnd = function(rotation) {
+				//console.log("RotationEnd: " + rotation.x + ", " + rotation.y);
+			};
+		
+			var init = function() {
+				
+
+				
+				
+				var properties = {
+					faces: [
+						{ id: 1, faceId: "face1" },
+						{ id: 2, faceId: "face2" },
+						{ id: 3, faceId: "face3" },
+						{ id: 4, faceId: "face4" },
+						{ id: 5, faceId: "face5" },
+						{ id: 6, faceId: "face7" }
+					],
+					size: 302,
+					shiftX: 0,
+					shiftY: 0,
+					shiftZ: -700,
+					observerX: 150,
+					observerY: 200,
+					axis: "xy",
+					focus: true,
+					focusDuration: 600,
+					dispatch: true,
+					rotationCallback: { context: window, method: 'handleRotation' },
+					rotationEndCallback: { context: window, method: 'handleRotationEnd' }
+				};
+				cube = new wink.ui.xyz.Cube(properties);
+				wink.byId("container").appendChild(cube.getDomNode());
+				cube.setFace({ id: 6, faceId: "face6" });
+				cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+
+				
+				
+			};
+			function start(){
+			i=0;
+			if (audio.paused == false) {
+				audio.pause();      
+			} else {
+				audio.play();
+			}
+     
+			timer=setInterval(function(){mover()},100)
+			
+			}
+			
+			function mover(){
+			i++;
+		
+			cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+			
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+			if (i==15)  {i=0; clearInterval(timer)};
+			
+			}
+			
+			
+			
+			$("#dados").taphold(function() {
+				clearInterval(0)
+			});
+		
+			var cube1;
+			var cube2;
+			
+			var timerCube1;
+			var timerCube2;
+			
+			function start11(){
+			h=0;
+			if (audio.paused == false) {
+				audio.pause();      
+			} else {
+				audio.play();
+			}
+     
+			timerCube1=setInterval(function(){mover11()},100)
+			
+			}
+			function mover11(){
+			
+			h++;
+					cube1.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube2.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube1.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube2.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube1.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube2.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					
+					cube1.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube2.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube1.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube2.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube1.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+					cube2.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+			if (h==15)  {h=0;cube1.rotate(0, 90, 100);cube2.rotate(0, 90, 100); clearInterval(timerCube1)};
+			
+			}
+			
+		
+		
+			var handleRotation1 = function(rotation) {
+				//console.log("Rotation: " + rotation.x + ", " + rotation.y);
+			};
+			var handleRotationEnd1 = function(rotation) {
+				//console.log("RotationEnd: " + rotation.x + ", " + rotation.y);
+			};
+			var handleRotation2 = function(rotation) {
+				//console.log("Rotation: " + rotation.x + ", " + rotation.y);
+			};
+			var handleRotationEnd2 = function(rotation) {
+				//console.log("RotationEnd: " + rotation.x + ", " + rotation.y);
+			};
+			var init2 = function()
+			{
+				
+
+				
+				
+				var properties = {
+					faces: [
+						{ id: 1, faceId: "cube1_face1" },
+						{ id: 2, faceId: "cube1_face2" },
+						{ id: 3, faceId: "cube1_face3" },
+						{ id: 4, faceId: "cube1_face4" },
+						{ id: 5, faceId: "cube1_face5" },
+						{ id: 6, faceId: "cube1_face6" }
+					],
+					size: 176,
+					shiftX: -20,
+					shiftY: -20,
+					shiftZ: -550,
+					observerX: 193,
+					observerY: 200,
+					axis: "xy",
+					focus: true,
+					focusDuration: 600,
+					dispatch: true,
+					rotationCallback: { context: window, method: 'handleRotation1' },
+					rotationEndCallback: { context: window, method: 'handleRotationEnd1' }
+				};
+				
+				cube1 = new wink.ui.xyz.Cube(properties);
+				
+				wink.byId("containerCube1").appendChild(cube1.getDomNode());
+				
+				var properties = {
+					faces: [
+						{ id: 1, faceId: "cube2_face1" },
+						{ id: 2, faceId: "cube2_face2" },
+						{ id: 3, faceId: "cube2_face3" },
+						{ id: 4, faceId: "cube2_face4" },
+						{ id: 5, faceId: "cube2_face5" },
+						{ id: 6, faceId: "cube2_face6" }
+					],
+					size: 176,
+					shiftX: 140,
+					shiftY: 120,
+					shiftZ: -550,
+					observerX: 0,
+					observerY: 200,
+					axis: "xy",
+					focus: true,
+					focusDuration: 600,
+					dispatch: true,
+					rotationCallback: { context: window, method: 'handleRotation2' },
+					rotationEndCallback: { context: window, method: 'handleRotationEnd2' }
+				};
+				
+				cube2 = new wink.ui.xyz.Cube(properties);
+				
+				wink.byId("containerCube2").appendChild(cube2.getDomNode());
+				
+			
+				cube1.getDomNode().style.zIndex = 1;
+				cube2.getDomNode().style.zIndex = 1;
+				cube1.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+				cube2.rotate(Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1));
+
+				//wink.setTimeout(window, 'rotateCube1', 500);
+				//wink.setTimeout(window, 'rotateCube2', 2000);
+
+				
+			};
+			
+			
+			
+		
+
+			var flipDisc;
+		
+			var init3 = function() {
+				
+
+				var images = [
+					
+					"./images/1.png",
+					"./images/2.png",
+					"./images/3.png",
+					"./images/4.png",
+					"./images/5.png",
+					"./images/6.png"
+				];
+
+				var properties = {
+					images: images
+				};
+				flipdisc = new wink.ui.xyz.FlipDisc(properties);
+				wink.byId("container3").appendChild(flipdisc.getDomNode());
+				
+			};
+		
+			
+$( '#cartas' ).live( 'pageshow',function(event, ui){
+if (ini==0) {init3();ini=1;}
+});
+		</script>
+
+		
+		 
+</html>
